@@ -10,7 +10,7 @@ body {
   margin: 20px auto;
   height: auto;
   width: 90%;
-  max-width: 500px;
+  max-width: 700px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -24,19 +24,44 @@ body {
   align-items: center;
 }
 
-select {
+.dropdown {
+  position: relative;
+  width: 70%;
+  text-align: center;
+}
+
+.dropdown-toggle {
   color: #333;
   background-color: #ddd;
   padding: 10px;
-  text-align: center;
   border-radius: 5px;
-  width: 70%;
+  cursor: pointer;
   box-sizing: border-box;
 }
 
-select:focus {
-  outline: none;
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f0f0f0;
+}
+
 .save-button {
   color: white;
   background-color: blue;
@@ -51,27 +76,55 @@ hr {
   margin-top: 20px;
   width: 70%;
 }
+
 .session-holder {
   padding: 5px;
   border-radius: 10px;
   gap: 25px;
   width: 100%;
-  text-align: center;
   display: flex;
   flex-direction: row;
   background-color: #f2f2f2;
+  justify-content: space-around;
 }
+
 .session {
+  text-align: center;
   border-radius: 5px;
+  width: 90%;
+  margin: auto;
   padding: 10px;
   background-color: #ddd;
   gap: 10px;
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
+  align-items: center;
+  height: 60px;
 }
+
+.session p {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.delete-button {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+}
+
 @media (max-width: 768px) {
   .container {
-    width: 80%;
+    width: 90%;
+  }
+  .session {
+    background: none;
+    margin-bottom: 20px;
   }
 }
 
@@ -84,7 +137,23 @@ hr {
     gap: 10px;
     flex-direction: column;
   }
+  .session {
+    background: none;
+    margin-bottom: 20px;
+  }
   hr {
     width: 40%;
+  }
+}
+@media (max-width: 476px) {
+  .session {
+    background: none;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 432px) {
+  .session {
+    background: none;
+    margin-bottom: 60px;
   }
 }
